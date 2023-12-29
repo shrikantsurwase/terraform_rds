@@ -1,6 +1,6 @@
 resource "aws_db_instance" "db_instance" {
   engine                   = var.engine_name
-  name                     = var.db_name
+  db_name                  = var.db_name
   username                 = var.user_name
   password                 = var.pass
   skip_final_snapshot      = var.skip_finalSnapshot
@@ -11,4 +11,6 @@ resource "aws_db_instance" "db_instance" {
   vpc_security_group_ids   = [data.aws_security_group.tcw_sg.id]
   instance_class           = var.instance_class
   allocated_storage        = 20
+
+  ######shri
 }
